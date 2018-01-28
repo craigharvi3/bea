@@ -6,7 +6,7 @@ module.exports = {
   title: 'Bea UI',
   sections: [
     {
-      name: 'Components',
+      name: 'Bea UI - Components',
       sections: [
         {
           name: 'Atoms',
@@ -23,12 +23,12 @@ module.exports = {
       ]
     }
   ],
-  showSidebar: true,
+  showSidebar: false,
   styleguideDir: 'styleguide',
   theme: {
     maxWidth: 1280,
     fontFamily: {
-      base: 'Helvetica, Arial, freesans, sans-serif'
+      base: '\'Open Sans\', sans-serif;'
     }
   },
   template: 'src/index.html',
