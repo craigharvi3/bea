@@ -1,4 +1,4 @@
-# Bea
+# Bea UI
 ### React Web Components
 
 ## Getting started
