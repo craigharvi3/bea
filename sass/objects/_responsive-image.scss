@@ -1,0 +1,113 @@
+/*------------------------------------*\
+    # RESPONSIVE IMAGE
+\*------------------------------------*/
+
+// NOTE: You probably want to use the ResponsiveImage molecule rather than
+// these classes. Check that component before using this object.
+
+/** From Grandstand: https://github.com/bbc/grandstand/blob/master/lib/objects/_responsive-image.scss
+ *
+ * We are not using the Grandstand supplied responsive image as we have a specific placeholder
+ * image that we need to use and Grandstand does not offer this extensibility.
+ * Additionally, we have some modifiers which are not available in Grandstand.
+ *
+**/
+
+/**
+ * The responsive image pattern automatically reserves the space
+ * needed for an image to be inserted, additionally you can add some modifiers
+ * or an image overlay if needed.
+ *
+    <div class="cap-o-responsive-image [ cap-o-responsive-image--1by1 | cap-o-responsive-image--16by9 ]">
+        <img src="..." class="cap-o-responsive-image__img" />
+        <div class="cap-o-responsive-image__overlay">...</div>
+    </div>
+ *
+ * 1. Setting the height to zero collapses the div so we don't
+ *    need to absolutly position the image
+ * 2. Stop images 1px difference between the reserved space
+ *    and the actual image from showing
+ */
+.cap-o-responsive-image {
+    position: relative;
+    height: 0; /* [1] */
+    overflow: hidden; /* [2] */
+    background-color: $image-placeholder;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjcgNzU2Ij4gICAgICAgICAgICAgICAgPHBhdGggZD0iTTM4My42MTQgMTcxLjQwM3YtMzUuMmMxMzUuODggMCAyNDYuNDEyIDExMC41MzIgMjQ2LjQxMiAyNDYuNDFoLTM1LjIwMmMwLTExNi40NjQtOTQuNzQ1LTIxMS4yMS0yMTEuMjEtMjExLjIxem0xNDAuODA3IDIxMS4yMWMwLTc3LjYzNi02My4xNy0xNDAuODA2LTE0MC44MDYtMTQwLjgwNnYtMzUuMjAyYzk3LjA1IDAgMTc2LjAxIDc4Ljk1OCAxNzYuMDEgMTc2LjAxSDUyNC40MnpNMzgzLjYxNSA0ODguMjJjLTU4LjMzIDAtMTA1LjYwNS00Ny4yNzctMTA1LjYwNS0xMDUuNjA2IDAtNTguMzMgNDcuMjc1LTEwNS42MDUgMTA1LjYwNC0xMDUuNjA1IDU4LjMzIDAgMTA1LjYwNSA0Ny4yNzUgMTA1LjYwNSAxMDUuNjA0IDAgNTguMzMtNDcuMjc3IDEwNS42MDUtMTA1LjYwNiAxMDUuNjA1em0wLTM4Ny4yMkMyMjguMDc0IDEwMSAxMDIgMjI3LjA3NSAxMDIgMzgyLjYxNGMwIDE1NS41NCAxMjYuMDc1IDI4MS42MTQgMjgxLjYxNCAyODEuNjE0IDE1NS41NCAwIDI4MS42MTQtMTI2LjA3NSAyODEuNjE0LTI4MS42MTRDNjY1LjIyOCAyMjcuMDc0IDUzOS4xNTMgMTAxIDM4My42MTQgMTAxeiIgZmlsbD0iI0ZGRiIgb3BhY2l0eT0iLjIiLz4gICAgICAgICAgICA8L3N2Zz4=');
+    background-repeat: no-repeat;
+
+    /**
+     * 1. Force the image to sit on top of the placeholder
+     * 2. Force the image to fill the available space
+     *
+     * The exact combination of [1] and [2] is needed to stop the
+     * image from being 1px too short, the root cause of which is
+     * down to the browser's rendering of sub-pixels
+     */
+    img {
+        position: absolute; /* [1] */
+        width: 100%; /* [2] */
+        height: 100%; /* [2] */
+    }
+}
+
+/**
+ * A full overlay that covers the image,
+ * mostly used for hover effects
+ */
+
+.cap-o-responsive-image__overlay {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  @include cap-transition(background);
+}
+
+/**
+ * A SVG that sits within the overlay above
+ */
+
+.cap-o-responsive-image__svg {
+    @include cap-transition(opacity);
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/**
+ * Removes the default placeholder styles
+ * for background-color and background-image
+ */
+
+.cap-o-responsive-image--no-placeholder {
+    background-color: transparent;
+    background-image: none;
+}
+
+/**
+* Image shape modifiers
+*/
+
+.cap-o-responsive-image--round {
+
+    .cap-o-responsive-image__img,
+    .cap-o-responsive-image__overlay {
+      border-radius: 50%;
+    }
+}
+
+/**
+ * Aspect radio modifiers
+ */
+
+.cap-o-responsive-image--1by1 {
+    padding-bottom: 100%;
+}
+
+.cap-o-responsive-image--16by9 {
+    padding-bottom: 9 / 16 * 100%;
+}

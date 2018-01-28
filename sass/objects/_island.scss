@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    # ISLAND
+\*------------------------------------*/
+
+/**
+ * The island will isolate items to be positioned absolutely
+ * and can be positioned to any corner using the modifiers.
+ *
+ *  <div class="cap-o-island">
+ *      <div class="cap-o-island__point">
+ *          [this is absolute positioned to the top left]
+ *      </div>
+ *  </div>
+ *
+ */
+
+ .cap-o-island {
+    position: relative;
+}
+
+.cap-o-island__point {
+    position: absolute;
+
+    &--br {
+        bottom: 0;
+        right: 0;
+    }
+
+    &--tr {
+        top: 0;
+        right: 0;
+    }
+
+    &--center {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+}

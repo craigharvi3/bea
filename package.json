@@ -1,0 +1,71 @@
+{
+  "name": "bea",
+  "version": "0.1.0",
+  "description": "React component library",
+  "main": "dist/bea.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigharvi3/bea.git"
+  },
+  "keywords": [
+    "bea",
+    "web",
+    "component",
+    "library"
+  ],
+  "author": "crabitrabbit <crabitrabbit@craigharvie.me> (http://craigharvie.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craigharvi3/bea/issues"
+  },
+  "homepage": "https://github.com/craigharvi3/bea#readme",
+  "scripts": {
+    "build": "yarn run build:styles && yarn run build:js && yarn run build:styleguide",
+    "build:js": "webpack --progress -p --config webpack.production.js",
+    "build:styles": "gulp styles",
+    "build:styleguide": "styleguidist build",
+    "lint": "gulp lint",
+    "styleguide": "yarn lint && (gulp watch & styleguidist server)",
+    "styleguide:publish": "git subtree push --prefix styleguide origin gh-pages",
+    "test": "mocha components/ --recursive --require test/react/setup.js --require babel-register"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "lodash": "^4.5.1",
+    "moment": "^2.18.1",
+    "prop-types": "^15.5.10",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "bbc-grandstand": "https://github.com/bbc/grandstand.git",
+    "del": "^3.0.0",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
+    "eslint": "^4.5.0",
+    "eslint-config-iplayer-jsx": "^1.0.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-react": "^7.5.1",
+    "gel-sass-tools": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.3",
+    "jest": "^21.0.0",
+    "react-styleguidist": "^6.0.26",
+    "react-test-renderer": "^16.0.0",
+    "sinon": "^4.1.2",
+    "webpack": "^3.5.4",
+    "webpack-merge": "^4.1.0"
+  }
+}

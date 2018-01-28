@@ -1,0 +1,6 @@
+@mixin cap-transition($property...) {
+    -moz-transition-property:    $property .5s ease;
+    -o-transition-property:      $property .5s ease;
+    -webkit-transition-property: $property .5s ease;
+    transition:                  $property .5s ease;
+}

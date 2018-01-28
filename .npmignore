@@ -1,0 +1,9 @@
+app/
+.babelrc
+coverage/
+docs/
+node_modules/
+src/
+scripts/
+test/
+.npm-debug

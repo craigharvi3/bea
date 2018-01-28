@@ -1,0 +1,61 @@
+/*------------------------------------*\
+  # COLOUR PALETTE
+\*------------------------------------*/
+
+/**
+ * The CAP colour palette is comprised of 2 parts.
+ *
+ * 1. Colour definitions. These variables give our HEX codes a human readable
+ * name, but ARE NOT designed to be implemented directly within components. UX
+ * will supply these names for us (they're usually types of bird).
+ *
+ * 2. Colour implementations. These variables DESCRIBE a colour definition in
+ * a functional context. They are designed to be used within components.
+ * Several implementations can (and should) share the same definition.
+ *
+ * NOTE: UX can help us with naming new colour implementations. If we can't
+ * think of a suitable implementation name, ask WHY the colour has been chosen
+ * for this specific purpose.
+ *
+ * EXAMPLE IMPLEMENTATION
+ *
+ * $brand-base: $_shiny-cowbird;
+ * $brand-accent: $_black;
+ * $primary-title: $_black;
+ * $sub-title: $_macaw;
+ * $modal-background: $_midnight-skylark;
+ */
+
+ /*------------------------------------*\
+  1. COLOUR DEFINITIONS
+ \*------------------------------------*/
+
+ $_black: #000;
+ $_white: #fff;
+ $_jacarina: #2E3542;
+ $_shiny-cowbird: #121212;
+
+ /*------------------------------------*\
+  2. COLOUR IMPLEMENTATIONS
+ \*------------------------------------*/
+
+ $image-placeholder: $_jacarina;
+
+ /*------------------------------------*\
+  # DEPRECATED - DO NOT ADD TO THIS LIST!
+ \*------------------------------------*/
+
+$white: #ffffff;
+$silver: #bbbbbb;
+$light-grey: #c0bebe;
+$dark-grey: #696969;
+$broadcast-white: rgba(255, 255, 255, .6);
+$empty-state-white: rgba(255, 255, 255, .04);
+$black: #000000;
+$black--alt: #111111;
+$black-transparent: rgba(0, 0, 0, .7);
+$shiny-cowbird: #121212;
+$schedule-black: rgba(0, 0, 0, .2);
+$broadcast-black: rgba(0, 0, 0, .2);
+$pink: #f54997;
+$pink-transparent: rgba(245, 73, 151, 0.85);

@@ -1,0 +1,10 @@
+@mixin rsimage-overlay() {
+
+    .cap-o-responsive-image__svg {
+        opacity: 1;
+    }
+
+    .cap-o-responsive-image__overlay {
+        background: $black-transparent;
+    }
+}

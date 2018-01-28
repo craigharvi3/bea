@@ -1,0 +1,80 @@
+/*------------------------------------*\
+    # LINK
+\*------------------------------------*/
+/*
+All links should use both classes below. How you use them depends
+on the use case as described below.
+
+[1] 'cap-o-link'
+Used on all links to remove the text underline decoration.
+
+[2] 'cap-o-link__text'
+Applied to text within a link to apply color and transitions.
+
+When using a single link item, apply both styles to the same element. E.g.
+
+<a class="cap-o-link cap-o-link__text">
+    Index Also title
+</a>
+
+When using a block link item, apply .cap-o-link to the anchor tag,
+and the .cap-o-link__text to text items within the link block. E.g.
+
+<a class="cap-o-link">
+    <h3 class="cap-o-link__text">
+        Heading
+    </h3>
+</a>
+*/
+
+/*
+  - Primary link
+  A primary link is used to signify an action that DOES
+  affect or control "play". For example, listen to a programme.
+*/
+
+/*[1]*/
+.cap-o-link {
+    text-decoration: none;
+}
+
+/*[2]*/
+.cap-o-link__text {
+    @include cap-transition(color);
+    color: $white;
+}
+
+/*
+  cap-o-link active and hover states
+  Built to support same-level nesting as per
+  the first use case
+*/
+.cap-o-link:visited {
+    &.cap-o-link__text,
+    .cap-o-link__text {
+        color: $white;
+    }
+}
+
+.cap-o-link:hover,
+.cap-o-link:focus {
+    &.cap-o-link__text,
+    .cap-o-link__text {
+        color: $pink;
+        text-decoration: none;
+    }
+}
+
+/*
+  - Secondary link
+  A secondary link is used to signify an action that DOESN'T
+  affect or control "play". For example, an external link.
+*/
+.cap-o-link--secondary:hover,
+.cap-o-link--secondary:focus {
+    &.cap-o-link__text,
+    .cap-o-link__text {
+        color: $light-grey;
+        text-decoration: underline;
+    }
+}

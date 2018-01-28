@@ -1,0 +1,26 @@
+
+/*------------------------------------*    # SCROLLABLE
+|*------------------------------------*/
+/*
+* The `scrollable` pattern allows you to make a slice horizontally scrollable.
+* The <li> MUST carry a CSS width property or it will collapse.
+*
+* EXAMPLE IMPLEMENTATION
+*   <div className="cap-o-scrollable">
+*       <ul className="cap-o-scrollable__list">
+*           <li>Item</li>
+*/
+
+.cap-o-scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cap-o-scrollable__list {
+    white-space: nowrap;
+    li {
+        display: inline-block;
+        white-space: normal;
+    }
+}

@@ -1,0 +1,31 @@
+
+/*------------------------------------*    # PIPED
+|*------------------------------------*/
+/*
+* The `piped` pattern adds a pipe (small line) in between list items
+* (e.g. item | item ) with the appropriate spacing.
+* It will not add a pipe or spacing to the last item / a single item.
+*
+* Note: We are using a last-child/border right pattern as pipes should always
+* couple with content to their left when wrapping.
+*
+* EXAMPLE IMPLEMENTATION
+* <ul className="cap-o-piped">
+*   <li className="gs-u-display-inline">text</li>
+*   <li className="gs-u-display-inline">text</li>
+* </ul>
+*/
+
+.cap-o-piped {
+  li:last-child {
+      border-right: 0;
+      padding-right: 0;
+      margin-right: 0;
+  }
+
+  li {
+      border-right: 1px solid $white;
+      padding-right: $gel-spacing-unit;
+      margin-right: $gel-spacing-unit;
+  }
+}

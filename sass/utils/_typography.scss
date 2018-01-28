@@ -1,0 +1,22 @@
+// This adds support for ongoing reith light work in orbit
+// See https://github.com/bbc/nav-orbit/pull/407
+.cap-u-reith-light {
+    font-weight: 300 !important;
+}
+
+.cap-u-antialiased {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+.cap-u-truncate {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.cap-u-truncate--expand\@l {
+    @include mq($from: gel-bp-l) {
+        white-space: normal !important;
+    }
+}
