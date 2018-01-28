@@ -5,7 +5,7 @@
 
 Clone the repo and install Node dependencies
 ```
-git clone https://github.com/craigharvi3/bea.git
+git clone https://github.com/craigharvi3/bea-ui.git
 yarn install
 ```
 
@@ -29,12 +29,12 @@ We are using [Mocha](https://mochajs.org), [Enzyme](http://airbnb.io/enzyme/) an
 
 ## Production
 
-* Run `yarn add @craigharvie/bea` to include the library from NPM.
-* Import the component in your page: `import { Component } from '@craigharvie/bea';`
+* Run `yarn add bea-ui` to include the library from NPM.
+* Import the component in your page: `import { Component } from 'bea-ui';`
 
 ## Publish styleguide
 
-To see changes in Bea on `<insert styleguide link here>`, styleguide needs to be published.
+To see changes in Bea UI on `<insert styleguide link here>`, styleguide needs to be published.
 
 * Run `yarn styleguide:publish` from `master`
 
