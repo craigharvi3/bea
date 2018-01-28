@@ -3,7 +3,7 @@ const LibraryName = require('./package.json').name;
 const LibraryVersion = require('./package.json').version;
 
 module.exports = {
-  title: 'Bea',
+  title: 'Bea UI',
   sections: [
     {
       name: 'Components',
