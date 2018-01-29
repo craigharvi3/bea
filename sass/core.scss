@@ -1,5 +1,8 @@
 $core: true;
 
+@import 'node_modules/bulma/sass/utilities/all';
+@import 'node_modules/bulma/sass/elements/button';
+@import 'node_modules/bulma/sass/elements/title';
 @import 'node_modules/gel-sass-tools/sass-tools';
 @import 'sass/settings/colours';
 @import 'node_modules/sass-mq/mq';
@@ -7,6 +10,7 @@ $core: true;
 @import 'sass/mixins/transition';
 @import 'sass/utils/shapes';
 @import 'sass/utils/typography';
+@import 'sass/utils/styleguide';
 @import 'sass/utils/flex';
 @import 'sass/objects/island';
 @import 'sass/objects/link';

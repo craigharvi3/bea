@@ -4,7 +4,14 @@
   "description": "React component library",
   "main": "dist/bea.js",
   "scripts": {
-    "test": "mocha"
+    "build": "yarn run build:styles && yarn run build:js && yarn run build:styleguide",
+    "build:js": "webpack --progress -p --config webpack.production.js",
+    "build:styles": "gulp styles",
+    "build:styleguide": "styleguidist build",
+    "lint": "gulp lint",
+    "styleguide": "yarn lint && (gulp watch & styleguidist server)",
+    "styleguide:publish": "git subtree push --prefix styleguide origin gh-pages",
+    "test": "mocha components/ --recursive --require test/react/setup.js --require babel-register"
   },
   "repository": {
     "type": "git",
@@ -22,17 +29,8 @@
     "url": "https://github.com/craigharvi3/bea/issues"
   },
   "homepage": "https://github.com/craigharvi3/bea#readme",
-  "scripts": {
-    "build": "yarn run build:styles && yarn run build:js && yarn run build:styleguide",
-    "build:js": "webpack --progress -p --config webpack.production.js",
-    "build:styles": "gulp styles",
-    "build:styleguide": "styleguidist build",
-    "lint": "gulp lint",
-    "styleguide": "yarn lint && (gulp watch & styleguidist server)",
-    "styleguide:publish": "git subtree push --prefix styleguide origin gh-pages",
-    "test": "mocha components/ --recursive --require test/react/setup.js --require babel-register"
-  },
   "dependencies": {
+    "bulma": "^0.6.2",
     "classnames": "^2.2.5",
     "lodash": "^4.5.1",
     "moment": "^2.18.1",
