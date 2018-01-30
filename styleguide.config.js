@@ -6,24 +6,19 @@ module.exports = {
   title: 'Bea UI',
   sections: [
     {
-      name: 'Bea UI - Components',
-      sections: [
-        {
-          name: 'Atoms',
-          components: './components/atoms/**/index.jsx'
-        },
-        {
-          name: 'Molecules',
-          components: './components/molecules/**/index.jsx'
-        },
-        {
-          name: 'Organisms',
-          components: './components/organisms/**/index.jsx'
-        }
-      ]
+      name: 'Atoms',
+      components: './components/atoms/**/index.jsx'
+    },
+    {
+      name: 'Molecules',
+      components: './components/molecules/**/index.jsx'
+    },
+    {
+      name: 'Organisms',
+      components: './components/organisms/**/index.jsx'
     }
   ],
-  showSidebar: false,
+  showSidebar: true,
   styleguideDir: 'styleguide',
   theme: {
     maxWidth: 1280,
@@ -42,5 +37,8 @@ module.exports = {
   getExampleFilename(componentPath) {
     const component = path.dirname(componentPath);
     return path.join(component, 'example.md');
+  },
+  styleguideComponents: {
+    StyleGuideRenderer: path.join(__dirname, 'components/styleguide/StyleGuide')
   }
 };
