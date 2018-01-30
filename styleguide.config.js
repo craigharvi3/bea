@@ -33,7 +33,6 @@ module.exports = {
   },
   template: 'src/index.html',
   assetsDir: 'src/assets/',
-  highlightTheme: 'base16-dark',
   showCode: true,
   skipComponentsWithoutExample: false,
   webpackConfig: require('./webpack.development.js'),
