@@ -33,7 +33,7 @@ export function StyleGuideRenderer({
                 </a>
               </span>
             </Heading>
-            <p>An extensive collection of common React objects.</p>
+            <p>An extensive collection of common React components built on top of <a href="https://bulma.io" target="_blank">Bulma</a> - The open source CSS framework.</p>
           </div>
           {children}
         </main>
