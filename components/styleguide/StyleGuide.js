@@ -1,66 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Logo from 'rsg-components/Logo';
 import Markdown from 'rsg-components/Markdown';
-import Styled from 'rsg-components/Styled';
-
-const xsmall = '@media (max-width: 600px)';
-
-const styles = ({ font, base, light, link, baseBackground, mq }) => ({
-  root: {
-    color: base,
-    backgroundColor: baseBackground,
-  },
-  header: {
-    color: '#fff',
-    backgroundColor: link,
-  },
-  bar: {
-    display: 'flex',
-    alignItems: 'center',
-    [xsmall]: {
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-  },
-  nav: {
-    marginLeft: 'auto',
-    marginRight: '-0.5em',
-    [xsmall]: {
-      margin: [[10, 0, 0]],
-    },
-  },
-  headerLink: {
-    '&, &:link, &:visited': {
-      marginLeft: '0.5em',
-      marginRight: '0.5em',
-      fontFamily: font,
-      color: '#efefef',
-    },
-    '&:hover, &:active': {
-      color: '#fff',
-      cursor: 'pointer',
-    },
-  },
-  content: {
-    maxWidth: 1000,
-    padding: [[15, 30]],
-    margin: [[0, 'auto']],
-    [mq.small]: {
-      padding: 15,
-    },
-    display: 'block',
-  },
-  components: {
-    overflow: 'auto',  // To prevent the pane from growing out of the screen
-  },
-  footer: {
-    display: 'block',
-    color: light,
-    fontFamily: font,
-    fontSize: 12,
-  },
-});
+import Button from '../atoms/Button';
+import Heading from '../atoms/Heading';
 
 export function StyleGuideRenderer({
   classes,
@@ -71,32 +13,36 @@ export function StyleGuideRenderer({
   hasSidebar
 }) {
   return (
-    <div>
-      <header>
-        <div>
-          <div>
-            <Logo>{title}</Logo>
-            <nav>
-              <a href="https://github.com/styleguidist/react-styleguidist/tree/master/docs">Docs</a>
-              <a href="https://github.com/styleguidist/react-styleguidist">GitHub</a>
-              <a href="https://gitter.im/styleguidist/styleguidist">Gitter</a>
-            </nav>
-          </div>
+    <div className="bea-sg-content bea-sg-utility--relative">
+      <div className='bea-sg-sidebar'>
+        <div className='bea-sg-logo'>
+          <a className="bea-sg-link" href="/">{title}</a>
+          <img src='img/logo.png' alt='' />
         </div>
-      </header>
-      <main>
-        {hasSidebar && <div className="sidebar">{toc}</div>}
-        {children}
-        <footer>
-          <Markdown text={`Generated with [React Styleguidist](${homepageUrl}) ❤️`} />
-        </footer>
-      </main>
+        <div className="bea-sg-sidebar__scroll">
+          {toc}
+        </div>
+      </div>
+      <div className="bea-sg-wrap">
+        <main className="bea-sg-main">
+          <div className="bea-sg-main__content content is-medium">
+            <Heading level={2}>Bea UI
+              <span className="bea-sg-utility--right">
+                <a className="bea-sg-link" href="https://github.com/craigharvi3/bea-ui" target="_blank">
+                  <Button colour='success'>View project on GitHub</Button>
+                </a>
+              </span>
+            </Heading>
+            <p>An extensive collection of common React objects.</p>
+          </div>
+          {children}
+        </main>
+      </div>
     </div>
   );
 }
 
 StyleGuideRenderer.propTypes = {
-  classes: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   homepageUrl: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,

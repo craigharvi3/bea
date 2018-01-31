@@ -21,6 +21,10 @@ module.exports = {
   showSidebar: true,
   styleguideDir: 'styleguide',
   theme: {
+    color: {
+      link: '#333',
+      linkHover: '#222'
+    },
     maxWidth: 1280,
     fontFamily: {
       base: '\'Open Sans\', sans-serif;'

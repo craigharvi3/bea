@@ -1,4 +1,3 @@
-// TODO: This is not production ready
 import React from 'react';
 import PropTypes from 'prop-types';
 
